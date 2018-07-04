@@ -187,6 +187,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Anuluj";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnRefresh
             // 
@@ -196,6 +197,7 @@
             this.btnRefresh.TabIndex = 11;
             this.btnRefresh.Text = "Odśwież";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.Opcje_Enter);
             // 
             // btnDefault
             // 
@@ -205,6 +207,7 @@
             this.btnDefault.TabIndex = 10;
             this.btnDefault.Text = "Domyślne";
             this.btnDefault.UseVisualStyleBackColor = true;
+            this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
             // cbStopBits
             // 

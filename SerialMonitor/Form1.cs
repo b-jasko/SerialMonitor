@@ -40,5 +40,23 @@ namespace SerialMonitor
             cbParityBits.Text = port.Parity.ToString();
             cbStopBits.Text = port.StopBits.ToString();
         }
+
+        private void btnDefault_Click(object sender, EventArgs e)
+        {
+            this.cbName.Text = "COM3";
+            this.cbBaud.Text = "9600";
+            this.cbDataBits.Text = "8";
+            this.cbParityBits.Text = "None";
+            this.cbStopBits.Text = "One";
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            cbName.Text = port.PortName.ToString();
+            cbBaud.Text = port.BaudRate.ToString();
+            cbDataBits.Text = port.DataBits.ToString();
+            cbParityBits.Text = port.Parity.ToString();
+            cbStopBits.Text = port.StopBits.ToString();
+        }
     }
 }
