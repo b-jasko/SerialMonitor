@@ -67,7 +67,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(519, 560);
+            this.tabControl1.Size = new System.Drawing.Size(519, 577);
             this.tabControl1.TabIndex = 0;
             // 
             // Terminal
@@ -83,7 +83,7 @@
             this.Terminal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Terminal.Name = "Terminal";
             this.Terminal.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Terminal.Size = new System.Drawing.Size(511, 527);
+            this.Terminal.Size = new System.Drawing.Size(511, 544);
             this.Terminal.TabIndex = 0;
             this.Terminal.Text = "Terminal";
             this.Terminal.UseVisualStyleBackColor = true;
@@ -105,6 +105,7 @@
             this.pictureBox.Size = new System.Drawing.Size(25, 24);
             this.pictureBox.TabIndex = 5;
             this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // nudMessage
             // 
@@ -335,7 +336,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 560);
+            this.ClientSize = new System.Drawing.Size(519, 577);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
