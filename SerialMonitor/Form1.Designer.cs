@@ -137,6 +137,7 @@
             this.btnSend.TabIndex = 2;
             this.btnSend.Text = "Wyślij";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // labelConnection
             // 
@@ -175,7 +176,7 @@
             this.Opcje.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Opcje.Name = "Opcje";
             this.Opcje.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Opcje.Size = new System.Drawing.Size(511, 527);
+            this.Opcje.Size = new System.Drawing.Size(511, 544);
             this.Opcje.TabIndex = 1;
             this.Opcje.Text = "Opcje";
             this.Opcje.UseVisualStyleBackColor = true;

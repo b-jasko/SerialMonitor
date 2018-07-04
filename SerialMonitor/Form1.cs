@@ -65,7 +65,7 @@ namespace SerialMonitor
                 pictureBox.BackColor = System.Drawing.Color.Red;
                 port.Close();
                 labelConnection.Text = "Brak połączenia (można zmienić opcje połączenia)";
-                //TODO: colored message
+                AddColored(richTextBox1, "\nZakończono połączenie z " + port.PortName + "\n", System.Drawing.Color.Orange);
             }
             else
             {
@@ -86,13 +86,27 @@ namespace SerialMonitor
                         "bity danych: " + port.DataBits.ToString() + ", " +
                         "bity stopu: " + port.StopBits.ToString() + ", " +
                         "parzystość: " + port.Parity.ToString() + ")";
-                    //TODO: colored message
+                    AddColored(richTextBox1, "Połączono z " + port.PortName + "\n" , System.Drawing.Color.Orange);
                 }
                 catch (Exception exc)
                 {
                     MessageBox.Show("Błąd połączenia:\n" + exc.Message);
                 }
             }
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddColored(System.Windows.Forms.RichTextBox richTextBox, string text, System.Drawing.Color color)
+        {
+            var StartIndex = richTextBox.TextLength;
+            richTextBox.AppendText(text);
+            var EndIndex = richTextBox.TextLength;
+            richTextBox.Select(StartIndex, EndIndex - StartIndex);
+            richTextBox.SelectionColor = color;
         }
     }
 }
