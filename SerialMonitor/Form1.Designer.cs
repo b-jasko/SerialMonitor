@@ -30,6 +30,13 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Terminal = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.nudMessage = new System.Windows.Forms.NumericUpDown();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.labelConnection = new System.Windows.Forms.Label();
+            this.labelLog = new System.Windows.Forms.Label();
             this.Opcje = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -44,18 +51,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelLog = new System.Windows.Forms.Label();
-            this.labelConnection = new System.Windows.Forms.Label();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.nudMessage = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.Terminal.SuspendLayout();
-            this.Opcje.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMessage)).BeginInit();
+            this.Opcje.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -87,6 +87,73 @@
             this.Terminal.TabIndex = 0;
             this.Terminal.Text = "Terminal";
             this.Terminal.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(23, 38);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(470, 382);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BackColor = System.Drawing.Color.Red;
+            this.pictureBox.Location = new System.Drawing.Point(24, 488);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox.TabIndex = 5;
+            this.pictureBox.TabStop = false;
+            // 
+            // nudMessage
+            // 
+            this.nudMessage.Hexadecimal = true;
+            this.nudMessage.Location = new System.Drawing.Point(24, 441);
+            this.nudMessage.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudMessage.Name = "nudMessage";
+            this.nudMessage.Size = new System.Drawing.Size(135, 26);
+            this.nudMessage.TabIndex = 4;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(347, 437);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(146, 33);
+            this.btnClear.TabIndex = 3;
+            this.btnClear.Text = "Wyczyść";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(178, 437);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(146, 33);
+            this.btnSend.TabIndex = 2;
+            this.btnSend.Text = "Wyślij";
+            this.btnSend.UseVisualStyleBackColor = true;
+            // 
+            // labelConnection
+            // 
+            this.labelConnection.AutoSize = true;
+            this.labelConnection.Location = new System.Drawing.Point(75, 488);
+            this.labelConnection.Name = "labelConnection";
+            this.labelConnection.Size = new System.Drawing.Size(123, 20);
+            this.labelConnection.TabIndex = 1;
+            this.labelConnection.Text = "Brak połączenia";
+            // 
+            // labelLog
+            // 
+            this.labelLog.AutoSize = true;
+            this.labelLog.Location = new System.Drawing.Point(20, 15);
+            this.labelLog.Name = "labelLog";
+            this.labelLog.Size = new System.Drawing.Size(40, 20);
+            this.labelLog.TabIndex = 0;
+            this.labelLog.Text = "Log:";
             // 
             // Opcje
             // 
@@ -261,73 +328,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nazwa portu:";
             // 
-            // labelLog
-            // 
-            this.labelLog.AutoSize = true;
-            this.labelLog.Location = new System.Drawing.Point(20, 15);
-            this.labelLog.Name = "labelLog";
-            this.labelLog.Size = new System.Drawing.Size(40, 20);
-            this.labelLog.TabIndex = 0;
-            this.labelLog.Text = "Log:";
-            // 
-            // labelConnection
-            // 
-            this.labelConnection.AutoSize = true;
-            this.labelConnection.Location = new System.Drawing.Point(75, 488);
-            this.labelConnection.Name = "labelConnection";
-            this.labelConnection.Size = new System.Drawing.Size(123, 20);
-            this.labelConnection.TabIndex = 1;
-            this.labelConnection.Text = "Brak połączenia";
-            // 
-            // btnSend
-            // 
-            this.btnSend.Location = new System.Drawing.Point(178, 437);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(146, 33);
-            this.btnSend.TabIndex = 2;
-            this.btnSend.Text = "Wyślij";
-            this.btnSend.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(347, 437);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(146, 33);
-            this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Wyczyść";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // nudMessage
-            // 
-            this.nudMessage.Hexadecimal = true;
-            this.nudMessage.Location = new System.Drawing.Point(24, 441);
-            this.nudMessage.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudMessage.Name = "nudMessage";
-            this.nudMessage.Size = new System.Drawing.Size(135, 26);
-            this.nudMessage.TabIndex = 4;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.BackColor = System.Drawing.Color.Red;
-            this.pictureBox.Location = new System.Drawing.Point(24, 488);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(25, 24);
-            this.pictureBox.TabIndex = 5;
-            this.pictureBox.TabStop = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(23, 38);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(470, 382);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -337,15 +337,14 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "SerialMonitor";
             this.tabControl1.ResumeLayout(false);
             this.Terminal.ResumeLayout(false);
             this.Terminal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMessage)).EndInit();
             this.Opcje.ResumeLayout(false);
             this.Opcje.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

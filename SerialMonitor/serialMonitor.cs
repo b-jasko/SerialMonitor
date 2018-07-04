@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SerialMonitor
 {
-    public partial class Form1 : Form
+    public partial class serialMonitor : Form
     {
-        public Form1()
+        public serialMonitor()
         {
             InitializeComponent();
         }
