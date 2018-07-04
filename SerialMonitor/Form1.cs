@@ -60,7 +60,7 @@ namespace SerialMonitor
 
         private void pictureBox_Click(object sender, EventArgs e)
         {
-            if(port.IsOpen)
+            if (port.IsOpen)
             {
                 pictureBox.BackColor = System.Drawing.Color.Red;
                 port.Close();
@@ -97,7 +97,13 @@ namespace SerialMonitor
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-
+            if (port.IsOpen)
+            {
+                AddColored(richTextBox1, ((Int32)nudMessage.Value).ToString("X"), System.Drawing.Color.Black);
+                Byte[] tosend = { (Byte)nudMessage.Value };
+                port.Write(tosend, 0, 1);
+            }
+            else MessageBox.Show("Aby wysłać bajt musisz ustanowić połączenie");
         }
 
         private void AddColored(System.Windows.Forms.RichTextBox richTextBox, string text, System.Drawing.Color color)
