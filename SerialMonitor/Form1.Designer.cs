@@ -31,21 +31,31 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Terminal = new System.Windows.Forms.TabPage();
             this.Opcje = new System.Windows.Forms.TabPage();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDefault = new System.Windows.Forms.Button();
+            this.cbStopBits = new System.Windows.Forms.ComboBox();
+            this.cbParityBits = new System.Windows.Forms.ComboBox();
+            this.cbDataBits = new System.Windows.Forms.ComboBox();
+            this.cbBaud = new System.Windows.Forms.ComboBox();
+            this.cbName = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbName = new System.Windows.Forms.ComboBox();
-            this.cbBaud = new System.Windows.Forms.ComboBox();
-            this.cbDataBits = new System.Windows.Forms.ComboBox();
-            this.cbParityBits = new System.Windows.Forms.ComboBox();
-            this.cbStopBits = new System.Windows.Forms.ComboBox();
-            this.btnDefault = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.labelLog = new System.Windows.Forms.Label();
+            this.labelConnection = new System.Windows.Forms.Label();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.nudMessage = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
+            this.Terminal.SuspendLayout();
             this.Opcje.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -62,11 +72,18 @@
             // 
             // Terminal
             // 
+            this.Terminal.Controls.Add(this.richTextBox1);
+            this.Terminal.Controls.Add(this.pictureBox);
+            this.Terminal.Controls.Add(this.nudMessage);
+            this.Terminal.Controls.Add(this.btnClear);
+            this.Terminal.Controls.Add(this.btnSend);
+            this.Terminal.Controls.Add(this.labelConnection);
+            this.Terminal.Controls.Add(this.labelLog);
             this.Terminal.Location = new System.Drawing.Point(4, 29);
             this.Terminal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Terminal.Name = "Terminal";
             this.Terminal.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Terminal.Size = new System.Drawing.Size(607, 531);
+            this.Terminal.Size = new System.Drawing.Size(511, 527);
             this.Terminal.TabIndex = 0;
             this.Terminal.Text = "Terminal";
             this.Terminal.UseVisualStyleBackColor = true;
@@ -94,6 +111,107 @@
             this.Opcje.TabIndex = 1;
             this.Opcje.Text = "Opcje";
             this.Opcje.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(330, 459);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(119, 37);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Text = "Anuluj";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(205, 459);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(119, 37);
+            this.btnRefresh.TabIndex = 11;
+            this.btnRefresh.Text = "Odśwież";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // btnDefault
+            // 
+            this.btnDefault.Location = new System.Drawing.Point(79, 459);
+            this.btnDefault.Name = "btnDefault";
+            this.btnDefault.Size = new System.Drawing.Size(119, 37);
+            this.btnDefault.TabIndex = 10;
+            this.btnDefault.Text = "Domyślne";
+            this.btnDefault.UseVisualStyleBackColor = true;
+            // 
+            // cbStopBits
+            // 
+            this.cbStopBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStopBits.FormattingEnabled = true;
+            this.cbStopBits.Location = new System.Drawing.Point(328, 379);
+            this.cbStopBits.Name = "cbStopBits";
+            this.cbStopBits.Size = new System.Drawing.Size(121, 28);
+            this.cbStopBits.TabIndex = 9;
+            // 
+            // cbParityBits
+            // 
+            this.cbParityBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbParityBits.FormattingEnabled = true;
+            this.cbParityBits.Location = new System.Drawing.Point(328, 296);
+            this.cbParityBits.Name = "cbParityBits";
+            this.cbParityBits.Size = new System.Drawing.Size(121, 28);
+            this.cbParityBits.TabIndex = 8;
+            // 
+            // cbDataBits
+            // 
+            this.cbDataBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDataBits.FormattingEnabled = true;
+            this.cbDataBits.Items.AddRange(new object[] {
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"});
+            this.cbDataBits.Location = new System.Drawing.Point(328, 213);
+            this.cbDataBits.Name = "cbDataBits";
+            this.cbDataBits.Size = new System.Drawing.Size(121, 28);
+            this.cbDataBits.TabIndex = 7;
+            // 
+            // cbBaud
+            // 
+            this.cbBaud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBaud.FormattingEnabled = true;
+            this.cbBaud.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "2400",
+            "4800",
+            "9600",
+            "14400",
+            "19200",
+            "28800",
+            "38400",
+            "57600",
+            "76800",
+            "115200",
+            "230400"});
+            this.cbBaud.Location = new System.Drawing.Point(328, 130);
+            this.cbBaud.Name = "cbBaud";
+            this.cbBaud.Size = new System.Drawing.Size(121, 28);
+            this.cbBaud.TabIndex = 6;
+            // 
+            // cbName
+            // 
+            this.cbName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbName.FormattingEnabled = true;
+            this.cbName.Location = new System.Drawing.Point(328, 47);
+            this.cbName.Name = "cbName";
+            this.cbName.Size = new System.Drawing.Size(121, 28);
+            this.cbName.TabIndex = 5;
             // 
             // label5
             // 
@@ -143,106 +261,72 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nazwa portu:";
             // 
-            // cbName
+            // labelLog
             // 
-            this.cbName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbName.FormattingEnabled = true;
-            this.cbName.Location = new System.Drawing.Point(328, 47);
-            this.cbName.Name = "cbName";
-            this.cbName.Size = new System.Drawing.Size(121, 28);
-            this.cbName.TabIndex = 5;
+            this.labelLog.AutoSize = true;
+            this.labelLog.Location = new System.Drawing.Point(20, 15);
+            this.labelLog.Name = "labelLog";
+            this.labelLog.Size = new System.Drawing.Size(40, 20);
+            this.labelLog.TabIndex = 0;
+            this.labelLog.Text = "Log:";
             // 
-            // cbBaud
+            // labelConnection
             // 
-            this.cbBaud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBaud.FormattingEnabled = true;
-            this.cbBaud.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "2400",
-            "4800",
-            "9600",
-            "14400",
-            "19200",
-            "28800",
-            "38400",
-            "57600",
-            "76800",
-            "115200",
-            "230400"});
-            this.cbBaud.Location = new System.Drawing.Point(328, 130);
-            this.cbBaud.Name = "cbBaud";
-            this.cbBaud.Size = new System.Drawing.Size(121, 28);
-            this.cbBaud.TabIndex = 6;
+            this.labelConnection.AutoSize = true;
+            this.labelConnection.Location = new System.Drawing.Point(75, 488);
+            this.labelConnection.Name = "labelConnection";
+            this.labelConnection.Size = new System.Drawing.Size(123, 20);
+            this.labelConnection.TabIndex = 1;
+            this.labelConnection.Text = "Brak połączenia";
             // 
-            // cbDataBits
+            // btnSend
             // 
-            this.cbDataBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDataBits.FormattingEnabled = true;
-            this.cbDataBits.Items.AddRange(new object[] {
-            "5",
-            "6",
-            "7",
-            "8",
-            "9"});
-            this.cbDataBits.Location = new System.Drawing.Point(328, 213);
-            this.cbDataBits.Name = "cbDataBits";
-            this.cbDataBits.Size = new System.Drawing.Size(121, 28);
-            this.cbDataBits.TabIndex = 7;
+            this.btnSend.Location = new System.Drawing.Point(178, 437);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(146, 33);
+            this.btnSend.TabIndex = 2;
+            this.btnSend.Text = "Wyślij";
+            this.btnSend.UseVisualStyleBackColor = true;
             // 
-            // cbParityBits
+            // btnClear
             // 
-            this.cbParityBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbParityBits.FormattingEnabled = true;
-            this.cbParityBits.Location = new System.Drawing.Point(328, 296);
-            this.cbParityBits.Name = "cbParityBits";
-            this.cbParityBits.Size = new System.Drawing.Size(121, 28);
-            this.cbParityBits.TabIndex = 8;
+            this.btnClear.Location = new System.Drawing.Point(347, 437);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(146, 33);
+            this.btnClear.TabIndex = 3;
+            this.btnClear.Text = "Wyczyść";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // cbStopBits
+            // nudMessage
             // 
-            this.cbStopBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStopBits.FormattingEnabled = true;
-            this.cbStopBits.Location = new System.Drawing.Point(328, 379);
-            this.cbStopBits.Name = "cbStopBits";
-            this.cbStopBits.Size = new System.Drawing.Size(121, 28);
-            this.cbStopBits.TabIndex = 9;
+            this.nudMessage.Hexadecimal = true;
+            this.nudMessage.Location = new System.Drawing.Point(24, 441);
+            this.nudMessage.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudMessage.Name = "nudMessage";
+            this.nudMessage.Size = new System.Drawing.Size(135, 26);
+            this.nudMessage.TabIndex = 4;
             // 
-            // btnDefault
+            // pictureBox
             // 
-            this.btnDefault.Location = new System.Drawing.Point(79, 459);
-            this.btnDefault.Name = "btnDefault";
-            this.btnDefault.Size = new System.Drawing.Size(119, 37);
-            this.btnDefault.TabIndex = 10;
-            this.btnDefault.Text = "Domyślne";
-            this.btnDefault.UseVisualStyleBackColor = true;
+            this.pictureBox.BackColor = System.Drawing.Color.Red;
+            this.pictureBox.Location = new System.Drawing.Point(24, 488);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox.TabIndex = 5;
+            this.pictureBox.TabStop = false;
             // 
-            // btnRefresh
+            // richTextBox1
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(205, 459);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(119, 37);
-            this.btnRefresh.TabIndex = 11;
-            this.btnRefresh.Text = "Odśwież";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(330, 459);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(119, 37);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Anuluj";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.richTextBox1.Location = new System.Drawing.Point(23, 38);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(470, 382);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
             // 
             // Form1
             // 
@@ -256,8 +340,12 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
+            this.Terminal.ResumeLayout(false);
+            this.Terminal.PerformLayout();
             this.Opcje.ResumeLayout(false);
             this.Opcje.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,6 +368,13 @@
         private System.Windows.Forms.ComboBox cbDataBits;
         private System.Windows.Forms.ComboBox cbBaud;
         private System.Windows.Forms.ComboBox cbName;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.NumericUpDown nudMessage;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Label labelConnection;
+        private System.Windows.Forms.Label labelLog;
     }
 }
 
