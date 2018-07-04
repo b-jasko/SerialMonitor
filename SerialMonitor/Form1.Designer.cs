@@ -128,6 +128,7 @@
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Wyczyść";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSend
             // 

@@ -15,7 +15,7 @@ namespace SerialMonitor
     {
         SerialPort port;
         delegate void Delegate1();
-        Delegate1 my_del1;
+        Delegate1 my_del1;  
 
         public Form1()
         {
@@ -114,7 +114,7 @@ namespace SerialMonitor
         {
             if (port.IsOpen)
             {
-                AddColored(richTextBox1, ((Int32)nudMessage.Value).ToString("X"), System.Drawing.Color.Black);
+                AddColored(richTextBox1, ((Int32)nudMessage.Value).ToString("X") + "\n", System.Drawing.Color.Black);
                 Byte[] tosend = { (Byte)nudMessage.Value };
                 port.Write(tosend, 0, 1);
             }
@@ -128,6 +128,11 @@ namespace SerialMonitor
             var EndIndex = richTextBox.TextLength;
             richTextBox.Select(StartIndex, EndIndex - StartIndex);
             richTextBox.SelectionColor = color;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.richTextBox1.Clear();
         }
     }
 }
