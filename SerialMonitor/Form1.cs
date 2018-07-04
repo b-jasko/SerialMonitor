@@ -14,6 +14,8 @@ namespace SerialMonitor
     public partial class Form1 : Form
     {
         SerialPort port;
+        delegate void Delegate1();
+        Delegate1 my_del1;
 
         public Form1()
         {
@@ -21,7 +23,20 @@ namespace SerialMonitor
             port = new SerialPort();
             port.ReadTimeout = 500;
             port.WriteTimeout = 500;
+
             Opcje.Enter += new EventHandler(Opcje_Enter);
+            port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+            my_del1 = new Delegate1(ReadReceived);
+        }
+
+        private void ReadReceived()
+        {
+            AddColored(richTextBox1, port.ReadByte().ToString("X") + " ", System.Drawing.Color.Blue);
+        }
+
+        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            richTextBox1.Invoke(my_del1);
         }
 
         void Opcje_Enter(object sender, EventArgs e)
